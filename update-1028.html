@@ -3,109 +3,124 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>10.28 UPDATE</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <title>10.28鏇存柊</title>
   <style>
-    :root { color-scheme: dark; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { background: #000; color: #f4f4f4; }
+    html, body { min-height: 100%; }
     body {
-      min-height: 100vh;
-      font-family: Inter, "PingFang SC", "Noto Sans SC", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", sans-serif;
+      background: #8d8f96;
       display: flex;
+      align-items: center;
       justify-content: center;
-      padding: 48px 16px 72px;
+      padding: 24px 16px;
     }
-    .card {
-      width: min(420px, 100%);
-      border: 1px solid #2a2a2a;
-      padding: 36px 28px 40px;
-    }
-    .meta {
+    .update-notice-card {
+      width: min(100%, 360px);
+      max-height: min(78vh, 560px);
       display: flex;
-      justify-content: space-between;
-      letter-spacing: 0.22em;
+      flex-direction: column;
+      border: 0.5px solid rgba(0, 0, 0, 0.08);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+      overflow: hidden;
+    }
+    .update-notice-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 18px 10px;
+    }
+    .update-notice-head strong { font-size: 17px; color: #17181c; line-height: 1.35; }
+    .update-notice-badge {
+      flex: none;
+      padding: 2px 7px;
+      border-radius: 7px;
+      background: #17181c;
+      color: #fff;
       font-size: 10px;
-      color: #9a9a9a;
-      text-transform: uppercase;
-    }
-    h1 {
-      font-family: "Cormorant Garamond", "Songti SC", serif;
-      font-size: 42px;
-      font-weight: 500;
+      font-weight: 700;
       letter-spacing: 0.08em;
-      margin: 28px 0 8px;
     }
-    .sub {
-      font-family: "Cormorant Garamond", serif;
-      font-style: italic;
-      color: #bdbdbd;
-      font-size: 18px;
-      margin-bottom: 32px;
+    .update-notice-ver { margin-left: auto; color: rgba(0, 0, 0, 0.4); font-size: 12px; flex: none; }
+    .update-notice-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 2px 18px 6px;
     }
-    hr {
-      border: 0;
-      border-top: 1px solid #2a2a2a;
-      margin: 0 0 28px;
-    }
-    h2 {
-      font-size: 11px;
-      letter-spacing: 0.28em;
-      color: #8c8c8c;
-      font-weight: 500;
-      margin: 0 0 14px;
-    }
-    ul { list-style: none; margin: 0 0 28px; }
-    li {
+    .update-notice-section { margin: 10px 0 4px; color: rgba(0, 0, 0, 0.45); font-size: 12px; font-weight: 600; }
+    .update-notice-body ul { margin: 0; padding: 0; list-style: none; }
+    .update-notice-body li {
       position: relative;
-      padding: 0 0 12px 14px;
+      padding: 5px 0 5px 16px;
+      color: #2a2c33;
       font-size: 13.5px;
-      line-height: 1.7;
-      color: #ececec;
+      line-height: 1.5;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.045);
     }
-    li::before {
+    .update-notice-body li:last-child { border-bottom: 0; }
+    .update-notice-body li::before {
       content: "";
       position: absolute;
-      left: 0;
-      top: 0.72em;
-      width: 4px;
-      height: 4px;
-      background: #fff;
+      left: 2px;
+      top: 12px;
+      width: 5px;
+      height: 5px;
       border-radius: 50%;
+      background: rgba(0, 0, 0, 0.28);
     }
-    .foot {
-      display: flex;
-      justify-content: space-between;
-      font-size: 10px;
-      letter-spacing: 0.18em;
-      color: #7a7a7a;
-      text-transform: uppercase;
+    .update-notice-foot {
+      margin: 12px 0 4px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.04);
+      color: rgba(0, 0, 0, 0.5);
+      font-size: 11.5px;
+      line-height: 1.5;
+    }
+    .update-notice-ok {
+      margin: 10px 18px 16px;
+      padding: 12px;
+      border: 0;
+      border-radius: 14px;
+      background: #17181c;
+      color: #fff;
+      font: inherit;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      display: block;
     }
   </style>
 </head>
 <body>
-  <article class="card">
-    <div class="meta"><span>Fated OS</span><span>v0.9.61</span></div>
-    <h1>10.28</h1>
-    <p class="sub">update note</p>
-    <hr />
-    <h2>Fixed</h2>
-    <ul>
-      <li>聊天不再剥中转模型标签；直连拿到网页 / 跨域 / 超时会改走内置转发</li>
-      <li>人设、TTS 上限提到 8000；档案面具不再卡字数</li>
-      <li>主页、微信、IG、购物出图超时，出图更快</li>
-      <li>线下双语、群聊记忆、长短记忆、群聊上下文</li>
-      <li>API 站子兼容：405、HTML 当接口、记住测通的地址</li>
-    </ul>
-    <h2>New</h2>
-    <ul>
-      <li>屏幕共享读完整人设、世界书、角色记忆，并携带最近微信（默认 150 轮，可调）</li>
-      <li>查岗可关病娇：关了就是边看边聊，prompt 可自己改</li>
-      <li>介入现实：他知道不在同一个次元，自卑小狗姿态看你现生</li>
-    </ul>
-    <div class="foot"><span>Oct 28 2026</span><span>Black / White</span></div>
+  <article class="update-notice-card">
+    <div class="update-notice-head">
+      <span class="update-notice-badge">NEW</span>
+      <strong>10.28鏇存柊 路 灞忓箷鍏变韩璇讳汉璁?+ 鏌ュ矖鍙叧鐥呭▏</strong>
+      <span class="update-notice-ver">v0.9.61</span>
+    </div>
+    <div class="update-notice-body">
+      <p class="update-notice-section">馃洜 鏈疆淇</p>
+      <ul>
+        <li>灞忓箷鍏变韩浠ュ墠 prompt 鍐欐锛氫汉璁惧彧鍓╀竴琛屻€佷笘鐣屼功鎴?100 瀛椼€佽繕涓嶅甫寰俊璁板繂锛岃鑹蹭笉璇讳汉璁?涓栫晫涔︼紝杩樼壒鍒鏄撳悆閱嬨€傜幇鍦ㄤ細璇诲畬鏁翠汉璁惧拰涓栫晫涔︼紝骞跺甫涓婅繖涓鑹茬殑璁板繂搴?+ 鏈€杩戝井淇″師鏂?/li>
+        <li>鑱婂ぉ涓嶅啀鍓ャ€孾鎸夋]銆嶃€孾鎶楁埅鏂璢銆嶈繖绫绘ā鍨嬫爣绛俱€傛湁鐨勪腑杞彧璁ゅ甫鏍囩鐨勫畬鏁?id锛屽墺鎺夊悗璇婃柇杩樿兘缁裤€佷竴鑱婂ぉ灏?HTML / 401</li>
+        <li>鐩磋繛濡傛灉鎷垮埌鐨勬槸缃戦〉鑰屼笉鏄?JSON锛堣法鍩熻鎷︽垚閿欒椤点€佽秴鏃惰繛涓嶄笂锛夛紝浼氳嚜鍔ㄦ敼璧板簲鐢ㄥ唴缃浆鍙?/li>
+        <li>浜鸿銆乀TS 涓婇檺鎻愬埌 8000锛涙。妗堥潰鍏蜂笉鍐嶅崱瀛楁暟</li>
+        <li>涓婚〉銆佸井淇°€両G銆佽喘鐗╁嚭鍥捐秴鏃讹紝鍑哄浘鏇村揩</li>
+        <li>绾夸笅鍙岃銆佺兢鑱婅蹇嗐€侀暱鐭蹇嗐€佺兢鑱婁笂涓嬫枃锛汚PI 绔欏瓙 405 / HTML 褰撴帴鍙ｄ細鍏滀綇</li>
+      </ul>
+      <p class="update-notice-section">鉁?鏂板</p>
+      <ul>
+        <li>缇佺粖 鈫?鏌ュ矖 鈫?灞忓箷鍏变韩涓嬮潰鏈夐厤缃細鐥呭▏妯″紡锛堢幇鍦ㄨ繖濂楀己鍒舵煡宀楋級銆佸叧鎺夊氨鏄竟鐪嬭竟鑱娿€佷粙鍏ョ幇瀹炪€佸井淇¤疆鏁帮紙榛樿 150锛屽彲璋冿級銆佽嚜瀹氫箟 prompt</li>
+        <li>浠嬪叆鐜板疄锛氫粬鐭ラ亾鑷繁鍜屼綘涓嶅湪鍚屼竴涓鍏冿紝鐢ㄨ嚜鍗戝皬鐙楃殑濮挎€佺湅浣犵幇鐢燂紝缇℃厱銆佸皬蹇冪考缈硷紝涓嶆暍鐪熺殑鍗犳湁</li>
+      </ul>
+      <p class="update-notice-foot">鑱婂ぉ璁板綍銆佺収鐗囦笌鎵€鏈夎缃兘鍦紝鏇存柊涓嶄細鍔ㄤ綘鐨勬暟鎹€?/p>
+    </div>
+    <a class="update-notice-ok" href="/">鐭ラ亾浜?/a>
   </article>
 </body>
 </html>
