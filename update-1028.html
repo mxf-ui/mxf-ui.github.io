@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>10.28 UPDATE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { background: #000; color: #f4f4f4; }
+    body {
+      min-height: 100vh;
+      font-family: Inter, "PingFang SC", "Noto Sans SC", sans-serif;
+      display: flex;
+      justify-content: center;
+      padding: 48px 16px 72px;
+    }
+    .card {
+      width: min(420px, 100%);
+      border: 1px solid #2a2a2a;
+      padding: 36px 28px 40px;
+    }
+    .meta {
+      display: flex;
+      justify-content: space-between;
+      letter-spacing: 0.22em;
+      font-size: 10px;
+      color: #9a9a9a;
+      text-transform: uppercase;
+    }
+    h1 {
+      font-family: "Cormorant Garamond", "Songti SC", serif;
+      font-size: 42px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      margin: 28px 0 8px;
+    }
+    .sub {
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      color: #bdbdbd;
+      font-size: 18px;
+      margin-bottom: 32px;
+    }
+    hr {
+      border: 0;
+      border-top: 1px solid #2a2a2a;
+      margin: 0 0 28px;
+    }
+    h2 {
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      color: #8c8c8c;
+      font-weight: 500;
+      margin: 0 0 14px;
+    }
+    ul { list-style: none; margin: 0 0 28px; }
+    li {
+      position: relative;
+      padding: 0 0 12px 14px;
+      font-size: 13.5px;
+      line-height: 1.7;
+      color: #ececec;
+    }
+    li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.72em;
+      width: 4px;
+      height: 4px;
+      background: #fff;
+      border-radius: 50%;
+    }
+    .foot {
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      color: #7a7a7a;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <article class="card">
+    <div class="meta"><span>Fated OS</span><span>v0.9.61</span></div>
+    <h1>10.28</h1>
+    <p class="sub">update note</p>
+    <hr />
+    <h2>Fixed</h2>
+    <ul>
+      <li>聊天不再剥中转模型标签；直连拿到网页 / 跨域 / 超时会改走内置转发</li>
+      <li>人设、TTS 上限提到 8000；档案面具不再卡字数</li>
+      <li>主页、微信、IG、购物出图超时，出图更快</li>
+      <li>线下双语、群聊记忆、长短记忆、群聊上下文</li>
+      <li>API 站子兼容：405、HTML 当接口、记住测通的地址</li>
+    </ul>
+    <h2>New</h2>
+    <ul>
+      <li>屏幕共享读完整人设、世界书、角色记忆，并携带最近微信（默认 150 轮，可调）</li>
+      <li>查岗可关病娇：关了就是边看边聊，prompt 可自己改</li>
+      <li>介入现实：他知道不在同一个次元，自卑小狗姿态看你现生</li>
+    </ul>
+    <div class="foot"><span>Oct 28 2026</span><span>Black / White</span></div>
+  </article>
+</body>
+</html>
